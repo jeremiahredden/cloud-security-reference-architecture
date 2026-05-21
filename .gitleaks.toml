@@ -1,0 +1,14 @@
+title = "Cloud Security Reference Architecture — Gitleaks Config"
+
+[allowlist]
+  description = "Allow intentional example values in documentation and reference IaC"
+  paths = [
+    "iac-security/examples",
+    "iac-security/vulnerable-examples"
+  ]
+  regexes = [
+    "EXAMPLE_NOT_A_REAL_KEY",
+    "AKIAIOSFODNN7EXAMPLE",
+    "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+    "00000000-0000-0000-0000-000000000000"
+  ]

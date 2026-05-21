@@ -1,0 +1,34 @@
+# Landing Zones
+
+## What this folder is
+
+A practitioner's reference for designing multi-account / multi-subscription / multi-project cloud foundations on AWS, Azure, and GCP. The material here is what I put in front of a platform team when the question is: *we have one account today and a roadmap that needs ten — what is the minimum-viable foundation we should land before the second workload arrives?*
+
+## The organizing principle
+
+The account boundary is the single most important security control in any cloud environment, and it is also the one that is most expensive to change after workloads have landed. A landing-zone design that gets the account topology wrong forces every other control — IAM, network, data, detection — to compensate. So the patterns here treat the landing zone as a *security architecture problem first* and an operations problem second, and the sequencing decisions are biased toward "land the guardrails before the first workload" rather than "retrofit guardrails after the audit finding."
+
+The folder is opinionated about three things specifically. First, that account vending should be automated from day one, even if the automation is a 100-line script that calls `aws organizations create-account` and applies a baseline SCP — the cost of building automation later, when ten teams are each carrying out manual account-creation runbooks, is much higher than building it now. Second, that the baseline guardrails (SCPs, Azure Policy at the Management Group, GCP Organization Policy at the org root) should be deny-only, broad, and unanimous — narrower per-OU policies come later, but the baseline must apply everywhere or it does not exist. Third, that Control Tower / Azure Landing Zones / Cloud Foundation Toolkit are starting points, not destinations — every team I have worked with eventually deviates from the vendor blueprint, and the deviations are healthy as long as they are documented.
+
+## Planned documents
+
+- **[aws-organizations-design.md](./aws-organizations-design.md)** — Multi-account AWS Organizations architecture: the landing-zone decision framework (Control Tower vs Landing Zone Accelerator vs hand-rolled), the eight-OU target topology (Security, LogArchive, Infrastructure, Workloads, Sandbox, Policy-Staging, Suspended, Exceptions), account taxonomy, the four baseline SCPs every org should ship at the root plus per-OU additions, the management-account discipline, delegated-administrator pattern, cross-OU access, the immutable LogArchive sink with Object Lock and SCP+KMS defense-in-depth, region strategy, regulated-workload isolation (HIPAA / PCI / FedRAMP), account vending and decommissioning automation, a worked example for a 350-engineer regulated SaaS (Meridian Health), 18 findings (`LZ-001` through `LZ-018`) with sprint assignments, and an eight anti-patterns checklist.
+- **azure-management-groups.md** *(coming)* — Azure Management Group hierarchy, Azure Landing Zones reference architecture, subscription vending, the baseline Azure Policy initiatives at each scope, and the Entra ID tenant decisions that bind the design (single-tenant vs multi-tenant, B2B trust, PIM integration).
+- **gcp-organization-design.md** *(coming)* — GCP Organization → Folders → Projects hierarchy, Cloud Foundation Toolkit, project vending, baseline Organization Policy constraints, VPC Service Controls perimeter design, and the Shared VPC vs per-project VPC decision.
+- **[baseline-guardrails.md](./baseline-guardrails.md)** — The deny-only baseline policy set that every landing zone should ship, organized into five tiers (universal denies, logging integrity, region restrictions, identity hygiene, workload-specific). AWS SCPs at depth with full JSON and threat-model rationale per policy; Azure Policy and GCP Organization Policy equivalents named for cross-reference. Includes the policy-staging lifecycle, the SCP placement quick-reference, and seven anti-patterns.
+- **[account-vending-automation.md](./account-vending-automation.md)** — The Account Factory pattern: the five baselines (logging, detection, hardening, identity, operations), the bootstrap Terraform module structure (per-baseline sub-modules with verification), the approval-gradient workflow, hooks and customization, the decommissioning pipeline with 30-day Suspended buffer, a worked Meridian Health example with nine account-class customization modules, 15 sprint-assignable findings (`VEN-001` through `VEN-015`), and eight anti-patterns. Azure Enterprise Scale and GCP Cloud Foundation Toolkit equivalents named for cross-reference.
+- **adoption-sequencing.md** *(coming)* — A six-week adoption plan that takes a team from "one AWS account" or "one Azure subscription" to "real landing zone with baseline guardrails and account vending." Sequencing is the under-documented part of every landing-zone reference architecture; this document fills that gap.
+- **landing-zone-anti-patterns.md** *(coming)* — The five landing-zone designs I have seen fail: the "everything in one account" pattern, the "one account per team" sprawl pattern, the "Control Tower with no deviations allowed" rigidity pattern, the "shared services everywhere" coupling pattern, and the "no break-glass" availability pattern. Each with the failure mode and the corrective move.
+
+## How to use this section
+
+**If you are designing a landing zone from scratch**, start with the platform you have. The AWS, Azure, and GCP design documents are deliberately parallel — read one and you have the shape, read all three and you have the cross-cloud common pattern. Then read `baseline-guardrails.md` before writing any guardrails of your own; the four-or-five-deny-baseline is high enough leverage that it should be in place before anything else.
+
+**If you are inheriting a landing zone you did not build**, `landing-zone-anti-patterns.md` is the diagnostic tool. Most inherited environments exhibit one or two of the documented anti-patterns; the document includes the corrective sequencing for each.
+
+**If you are answering an audit question about cloud governance**, the baseline guardrails document and the adoption-sequencing document together produce the artifact set most cloud audits actually want: "what is enforced, where is it enforced, and when did it land?"
+
+## What this section is not
+
+- **A reproduction of the Control Tower / Azure Landing Zones / CFT documentation.** Those are good starting points and the vendors maintain them better than I could. This folder covers the design decisions that are not in the vendor docs because they are opinionated.
+- **A multi-tenant SaaS landing zone.** SaaS-tenant-per-account or tenant-per-project patterns deserve their own treatment and will live elsewhere in the repo when they arrive. Here we assume "one organization, many internal workloads."
