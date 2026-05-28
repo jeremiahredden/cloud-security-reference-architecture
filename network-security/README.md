@@ -17,8 +17,8 @@ The folder is opinionated about three things. First, that **egress control is mo
 - **[hub-and-spoke-architecture.md](./hub-and-spoke-architecture.md)** — Transit Gateway vs Cloud WAN vs Azure Virtual WAN, hub-and-spoke topology, shared services in the hub (DNS, inspection, egress), and the routing-design decisions that determine whether the architecture scales or knots up.
 - **[egress-control.md](./egress-control.md)** — AWS Network Firewall, Azure Firewall, GCP Cloud NGFW, DNS firewall, and the egress-filtering decision tree. Egress allowlists vs blocklists. The "egress to the internet is a privilege, not a default" baseline. Worked example: data exfiltration prevention for a regulated workload.
 - **[private-connectivity.md](./private-connectivity.md)** — PrivateLink, Private Endpoints, Private Service Connect, and VPC Peering vs Transit Gateway vs PrivateLink decision tree. The interface-endpoint-vs-gateway-endpoint cost trade-off in AWS. Cross-account / cross-cloud private connectivity patterns.
-- **inspection-architecture.md** *(coming)* — When in-line inspection is worth the operational cost and when it is not. Gateway Load Balancer, Azure Firewall Premium, GCP Packet Mirroring. The "central inspection VPC" pattern and its failure modes.
-- **dns-security.md** *(coming)* — Route 53 Resolver DNS firewall, Azure DNS Private Resolver, GCP DNS firewall. DNS filtering as a low-cost egress control. The DNS-over-HTTPS bypass problem and the corrective controls.
+- **[inspection-architecture.md](./inspection-architecture.md)** — When in-line inspection is worth the operational cost and when it is not. Gateway Load Balancer, Azure Firewall Premium, GCP Packet Mirroring. The "central inspection VPC" pattern and its failure modes.
+- **[dns-security.md](./dns-security.md)** — Route 53 Resolver DNS firewall, Azure DNS Private Resolver, GCP DNS firewall. DNS filtering as a low-cost egress control. The DNS-over-HTTPS bypass problem and the corrective controls.
 
 ## How to use this section
 
