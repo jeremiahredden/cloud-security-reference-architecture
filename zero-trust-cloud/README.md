@@ -12,7 +12,7 @@ The folder is opinionated about three things. First, that **Zero Trust is a post
 
 ## Planned documents
 
-- **identity-aware-access.md** *(coming)* — Cloudflare Access, AWS Verified Access, GCP Identity-Aware Proxy, and the homegrown identity-aware-proxy patterns (envoyproxy + JWT, nginx + auth-request). The retire-the-corporate-VPN adoption sequence. The user-experience trade-offs that determine whether the rollout succeeds.
+- **[identity-aware-access.md](./identity-aware-access.md)** — Cloudflare Access, AWS Verified Access, GCP Identity-Aware Proxy, and the homegrown identity-aware-proxy patterns (envoyproxy + JWT, nginx + auth-request). The retire-the-corporate-VPN adoption sequence. The user-experience trade-offs that determine whether the rollout succeeds.
 - **workload-identity-zt.md** *(coming)* — Workload-identity-as-Zero-Trust-foundation. SPIFFE / SPIRE for service identity, Istio AuthorizationPolicy keyed off SPIFFE IDs, the cross-cluster / cross-cloud identity federation patterns, and the "every service has an identity, every call is authenticated" baseline.
 - **microsegmentation.md** *(coming)* — Microsegmentation in cloud: VPC + security groups vs Kubernetes NetworkPolicy vs service mesh AuthorizationPolicy vs identity-aware-proxy enforcement. The four-tier microsegmentation model. The "north-south is the perimeter, east-west is the lateral-movement budget" framing.
 - **mtls-everywhere.md** *(coming)* — Service-mesh mTLS-by-default (Istio, Linkerd, Consul), application-layer mTLS for services outside the mesh, the certificate-lifecycle patterns (SPIRE-issued, ACM Private CA, Vault PKI). The mTLS-without-rotation-is-not-mTLS baseline.
