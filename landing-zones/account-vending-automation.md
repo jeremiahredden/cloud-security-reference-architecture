@@ -543,5 +543,5 @@ References:
 - This repo:
   - [aws-organizations-design.md](./aws-organizations-design.md) — the OU hierarchy this pipeline targets.
   - [baseline-guardrails.md](./baseline-guardrails.md) — the SCPs the bootstrap assumes are already in place.
-  - [../iac-security/terraform-security-patterns.md](../iac-security/) *(coming)* — the Terraform state-file protection patterns for the bootstrap module's state.
+  - [../iac-security/terraform-security-patterns.md](../iac-security/terraform-security-patterns.md) — the Terraform state-file protection patterns for the bootstrap module's state.
   - [../identity-and-access/](../identity-and-access/) — the IAM Identity Center patterns referenced in the bootstrap's identity baseline.

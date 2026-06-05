@@ -2,7 +2,7 @@
 
 A practitioner's reference for IaC policy-as-code scanning — Checkov, tfsec, Trivy config, Conftest / OPA, and HashiCorp Sentinel — the tool selection, the policy-writing patterns, the pipeline gate structure, the severity-to-action mapping, and the signal-to-noise tuning that determines whether the gates produce real security value or are routinely overridden. The document is AWS-heavy in the worked examples; the patterns are tool-agnostic and apply equally to Azure / GCP IaC.
 
-The companion documents in this folder are [terraform-security-patterns.md](./) *(coming)*, [iac-pipeline-gates.md](./) *(coming)*, and [secure-modules.md](./) *(coming)*. Read this document for the policy-as-code framing; the others for the pipeline and module patterns that use the policies.
+The companion documents in this folder are [terraform-security-patterns.md](./terraform-security-patterns.md), [iac-pipeline-gates.md](./iac-pipeline-gates.md), and [secure-modules.md](./secure-modules.md). Read this document for the policy-as-code framing; the others for the pipeline and module patterns that use the policies.
 
 ---
 
@@ -384,7 +384,7 @@ Findings IDs use the `PAC-` prefix.
 - [HashiCorp Sentinel](https://www.terraform.io/cloud-docs/sentinel)
 - [CloudFormation Guard](https://docs.aws.amazon.com/cfn-guard/latest/ug/what-is-guard.html)
 - This repo:
-  - [terraform-security-patterns.md](./) *(coming)* — the Terraform-specific patterns this document's policies enforce.
-  - [iac-pipeline-gates.md](./) *(coming)* — the full pipeline reference that wires the policies into CI.
-  - [secure-modules.md](./) *(coming)* — secure-by-default modules that make the policies easier to satisfy.
+  - [terraform-security-patterns.md](./terraform-security-patterns.md) — the Terraform-specific patterns this document's policies enforce.
+  - [iac-pipeline-gates.md](./iac-pipeline-gates.md) — the full pipeline reference that wires the policies into CI.
+  - [secure-modules.md](./secure-modules.md) — secure-by-default modules that make the policies easier to satisfy.
   - [../landing-zones/baseline-guardrails.md](../landing-zones/baseline-guardrails.md) — the SCP layer that complements policy-as-code by catching the resources that bypass the IaC pipeline.

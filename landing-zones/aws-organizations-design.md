@@ -338,7 +338,7 @@ The `tag-based-deny` family is useful but error-prone — `aws:ResourceTag` SCPs
 
 SCPs and Permission Boundaries are complementary, not redundant. SCPs constrain what *any* principal in an account can do; Permission Boundaries constrain what a *specific* role can do, even if the role's policy is broader. Use SCPs for organization-wide guardrails (deny disable-logging, deny outside-approved-regions). Use Permission Boundaries for developer self-service (the developer can create IAM roles but only roles that themselves have the Permission Boundary attached, which prevents privilege escalation). The two together form a multiplicative defense; the SCP is the wall at the boundary, the Permission Boundary is the floor on individual roles.
 
-See [../identity-and-access/least-privilege-workflow.md](../identity-and-access/) *(coming)* for the Permission Boundary pattern.
+See [../identity-and-access/least-privilege-workflow.md](../identity-and-access/least-privilege-workflow.md) for the Permission Boundary pattern.
 
 ---
 

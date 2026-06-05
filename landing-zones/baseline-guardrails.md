@@ -909,8 +909,8 @@ The guardrail designs I have seen fail.
 - [GCP Organization Policy constraints catalog](https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints) — for the GCP-side equivalents.
 - This repo:
   - [aws-organizations-design.md](./aws-organizations-design.md) — the parent document; OU placement, the management-account discipline, the worked example.
-  - [../identity-and-access/least-privilege-workflow.md](../identity-and-access/) *(coming)* — the Permission Boundary pattern that complements SCPs at the role level.
-  - [../iac-security/policy-as-code.md](../iac-security/) *(coming)* — Conftest / Checkov gates that catch IaC violations before resources are created, complementing the SCP layer that catches violations at resource-creation time.
-  - [../cloud-detection-response/custom-detections.md](../cloud-detection-response/) *(coming)* — detection rules for SCP detachment and exemption tampering.
+  - [../identity-and-access/least-privilege-workflow.md](../identity-and-access/least-privilege-workflow.md) — the Permission Boundary pattern that complements SCPs at the role level.
+  - [../iac-security/policy-as-code.md](../iac-security/policy-as-code.md) — Conftest / Checkov gates that catch IaC violations before resources are created, complementing the SCP layer that catches violations at resource-creation time.
+  - [../cloud-detection-response/custom-detections.md](../cloud-detection-response/custom-detections.md) — detection rules for SCP detachment and exemption tampering.
 - Sibling repos:
   - [appsec-reference-architecture/cloud-security/aws/scp-guardrails.json](https://github.com/jeremiahredden/appsec-reference-architecture/blob/main/cloud-security/aws/scp-guardrails.json) — the JSON starter pack.

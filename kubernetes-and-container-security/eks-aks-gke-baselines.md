@@ -439,7 +439,7 @@ Beyond the audit log, four specific detective patterns every cluster should have
 
 ### 1. Workload runtime monitoring
 
-Per [runtime-security.md](./) (coming): Falco, Tetragon, or vendor EDR detect runtime anomalies (unexpected process execution, file access patterns, network anomalies).
+Per [runtime-security.md](./runtime-security.md): Falco, Tetragon, or vendor EDR detect runtime anomalies (unexpected process execution, file access patterns, network anomalies).
 
 For cluster baseline: ensure the runtime-monitoring agent is deployed as a DaemonSet on every node; agents report to the central detection backend.
 

@@ -521,4 +521,4 @@ The fix: rebuild and redeploy after credential rotation; remove old images from 
 - **A complete secret-scanning tool comparison.** Gitleaks / TruffleHog / GitGuardian / GitHub Secret Scanning are the most common; the patterns transfer.
 - **A guide to specific secret formats.** Provider-specific patterns are maintained by the scanning tools themselves.
 - **A repo-history rewriting tutorial.** `git filter-repo` and `git rebase` patterns are well-documented elsewhere.
-- **A complete container-supply-chain reference.** Container scanning depth lives in [../kubernetes-and-container-security/](../kubernetes-and-container-security/) (coming) and the AppSec sibling repo.
+- **A complete container-supply-chain reference.** Container scanning depth lives in [../kubernetes-and-container-security/](../kubernetes-and-container-security/) and the AppSec sibling repo.

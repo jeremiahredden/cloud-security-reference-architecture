@@ -4,7 +4,7 @@ A practitioner's reference for identity-aware proxies in cloud environments — 
 
 This document opens the zero-trust-cloud folder. It is intentionally the first because the README is opinionated: workforce identity-aware access is the first move in any ZT adoption — it retires the corporate VPN, which produces the most user-visible benefit, which produces the political capital for subsequent moves. The patterns here are mature in 2026; the adoption is mostly about sequencing rather than capability gaps.
 
-For the workload-side identity that makes service-to-service ZT work, see [workload-identity-zt.md](./) (coming). For the broader ZT adoption sequence, see [zt-adoption-sequence.md](./) (coming). For the IAM patterns this builds on, see [../identity-and-access/workload-identity.md](../identity-and-access/workload-identity.md) and the broader workforce-IAM context.
+For the workload-side identity that makes service-to-service ZT work, see [workload-identity-zt.md](./workload-identity-zt.md). For the broader ZT adoption sequence, see [zt-adoption-sequence.md](./zt-adoption-sequence.md). For the IAM patterns this builds on, see [../identity-and-access/workload-identity.md](../identity-and-access/workload-identity.md) and the broader workforce-IAM context.
 
 ---
 
@@ -384,7 +384,7 @@ The deeper Zero Trust ideal — beyond authentication at session start, continuo
 
 Most organizations in 2026 stop at the session-establishment authentication and don't implement continuous re-evaluation. The pattern is feasible; the engineering investment is meaningful.
 
-For detail on continuous authorization patterns: [continuous-authorization.md](./) (coming).
+For detail on continuous authorization patterns: [continuous-authorization.md](./continuous-authorization.md).
 
 ---
 
@@ -526,7 +526,7 @@ The fix: timeboxed pilot with explicit success criteria; commitment to expansion
 | IAA-011 | Mobile experience not tested; help-desk burden | Low | Per-platform UX validation; mobile app integration | IT |
 | IAA-012 | Per-application policies hand-managed; drift over time | Medium | Policy-as-code; IaC for policy management | DevOps + Security Eng |
 | IAA-013 | Group-based access via static groups; no JIT or temporary elevation | Medium | JIT group membership via IdP; time-bound elevation | IAM Eng + Security Eng |
-| IAA-014 | Continuous authorization not implemented; session re-evaluation absent | Low | Continuous authorization patterns; per [continuous-authorization.md](./) (coming) | Security Eng + IAM Eng |
+| IAA-014 | Continuous authorization not implemented; session re-evaluation absent | Low | Continuous authorization patterns; per [continuous-authorization.md](./continuous-authorization.md) | Security Eng + IAM Eng |
 | IAA-015 | Device-posture requirements too strict; legitimate users blocked | Medium | Tiered posture by application; BYOD path via VDI / browser isolation | IT + Security Eng |
 | IAA-016 | Identity-aware access works for HTTP only; legacy non-HTTP services still need VPN | Low | Identify legacy services; modernize or accept VPN tail; document | Architecture + IT |
 | IAA-017 | IdP integration fragile; SSO breaks if IdP fails | Medium | IdP HA; documented IdP-outage response; emergency bypass | IT + IAM Eng |
@@ -539,4 +539,4 @@ The fix: timeboxed pilot with explicit success criteria; commitment to expansion
 - **A complete Cloudflare / Verified Access / IAP administration reference.** Vendor documentation covers operational depth.
 - **A workforce IdP guide.** Okta, Entra ID, Google Workspace administration are their own large topics.
 - **A device-management reference.** MDM choice (Jamf, Intune, Kandji) belongs with endpoint management.
-- **A complete Zero Trust adoption guide.** The full adoption sequence lives in [zt-adoption-sequence.md](./) (coming); this document focuses on identity-aware access specifically.
+- **A complete Zero Trust adoption guide.** The full adoption sequence lives in [zt-adoption-sequence.md](./zt-adoption-sequence.md); this document focuses on identity-aware access specifically.

@@ -2,7 +2,7 @@
 
 A practitioner's reference for the AWS log pipeline that feeds detection, IR, and audit — organization-level CloudTrail, VPC Flow Logs, AWS Config, GuardDuty, Security Hub, IAM Access Analyzer findings, ALB/CloudFront/WAF access logs, S3 access logs, EKS audit logs, RDS / Aurora audit logs, and the SIEM integration patterns. The document is AWS-first; Azure (Activity Logs, Diagnostic Settings) and GCP (Audit Logs, Log Sinks) are named at the end for cross-reference.
 
-This document covers the log architecture; the detection logic on top of the architecture lives in [custom-detections.md](./) *(coming)*, and the incident response runbooks that consume the logs live in this folder's runbook documents (`runbook-leaked-iam-key.md`, `runbook-exposed-storage.md`, etc.).
+This document covers the log architecture; the detection logic on top of the architecture lives in [custom-detections.md](./custom-detections.md), and the incident response runbooks that consume the logs live in this folder's runbook documents (`runbook-leaked-iam-key.md`, `runbook-exposed-storage.md`, etc.).
 
 ---
 
@@ -647,4 +647,4 @@ GCP's audit-log architecture is in some respects more mature than AWS's — Clou
   - [../landing-zones/aws-organizations-design.md](../landing-zones/aws-organizations-design.md) — the LogArchive account that this pipeline targets.
   - [../landing-zones/baseline-guardrails.md](../landing-zones/baseline-guardrails.md) — Guardrails 2.1 and 2.2 that protect the LogArchive.
   - [runbook-leaked-iam-key.md](./runbook-leaked-iam-key.md) — the IR runbook that uses the queries from this document.
-  - [custom-detections.md](./) *(coming)* — the detection logic that consumes the pipeline.
+  - [custom-detections.md](./custom-detections.md) — the detection logic that consumes the pipeline.

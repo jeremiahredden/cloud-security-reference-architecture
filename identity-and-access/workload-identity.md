@@ -588,4 +588,4 @@ GCP Workload Identity Federation is more mature than AWS's in some dimensions (i
 - This repo:
   - [least-privilege-workflow.md](./least-privilege-workflow.md) — the IAM Access Analyzer workflow that complements this document's role-creation patterns.
   - [../landing-zones/baseline-guardrails.md](../landing-zones/baseline-guardrails.md) — Guardrails 4.1 (deny IAM user creation) and 4.2 (require IMDSv2) that this document references.
-  - [../secrets-and-keys/kill-the-static-secret.md](../secrets-and-keys/) *(coming)* — companion document that covers the broader static-secret reduction including application-layer secrets.
+  - [../secrets-and-keys/kill-the-static-secret.md](../secrets-and-keys/kill-the-static-secret.md) — companion document that covers the broader static-secret reduction including application-layer secrets.
